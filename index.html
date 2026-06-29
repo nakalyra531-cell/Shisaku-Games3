@@ -7,8 +7,6 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sans-serif;background:#F2EDE4;color:#1a1a1a;min-height:100vh;}
-
-/* ── レイアウト（サイドパネル用） ── */
 .app-wrapper {
   display: flex;
   justify-content: center;
@@ -18,7 +16,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
   margin: 0 auto;
 }
 .side-panel {
-  display: none; /* デフォルト（スマホ）は非表示 */
+  display: none;
   width: 280px;
   height: 100vh;
   position: sticky;
@@ -26,7 +24,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
   padding: 1rem;
   overflow-y: auto;
 }
-/* 画面幅が広い場合にサイドパネルを表示 */
 @media (min-width: 1100px) {
   .side-panel { display: block; }
 }
@@ -65,8 +62,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
 }
 .rule-list { padding-left: 1.2rem; margin-bottom: 0.5rem; }
 .rule-note { font-size: 11px !important; color: var(--text2) !important; margin-top: 0.5rem; }
-
-/* 早見表テーブル */
 .ref-table {
   width: 100%;
   border-collapse: collapse;
@@ -91,12 +86,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
 .ref-icon { margin-right: 4px; font-size: 12px; }
 .ref-table .pos { color: var(--blue); font-weight: 700; background: var(--blue4); }
 .ref-table .neg { color: var(--red); font-weight: 700; background: var(--red4); }
-
-/* メインコンテナ */
 .container{max-width:620px;flex:1;padding:1rem;}
 .screen{display:none;}.screen.active{display:block;}
-
-/* ── カラー変数 ── */
 :root{
   --blue:#1B3F6E;--blue2:#2A5FA8;--blue3:#D6E4F5;--blue4:#EBF2FB;
   --red:#8B1A1A;--red2:#C0392B;--red3:#F5DDD8;--red4:#FAEAE7;
@@ -104,14 +95,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
   --ivory:#F9F6EF;--ivory2:#EDE9DF;--border:#D8D3C8;
   --text:#1a1a1a;--text2:#7A7568;
 }
-
-/* ── 共通タイポ ── */
 .game-title{font-size:28px;font-weight:700;color:var(--blue);letter-spacing:-0.5px;}
 .game-sub{font-size:12px;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.25rem;}
 .sec{background:#fff;border:1px solid var(--border);border-radius:14px;padding:0.85rem 1rem;margin-bottom:0.65rem;}
 .sec-lbl{font-size:10px;font-weight:700;color:var(--text2);letter-spacing:0.8px;margin-bottom:0.55rem;text-transform:uppercase;}
-
-/* ── SETUP ── */
 .setup-hero{text-align:center;padding:1.5rem 0 1rem;}
 .setup-emblem{font-size:48px;margin-bottom:0.5rem;}
 .s-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1rem 1.25rem;margin-bottom:0.75rem;}
@@ -128,23 +115,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
 .rule-box{background:var(--blue4);border:1px solid var(--blue3);border-radius:14px;padding:1rem 1.25rem;margin-bottom:0.75rem;}
 .rule-box h3{font-size:12px;font-weight:700;color:var(--blue);margin-bottom:0.6rem;letter-spacing:0.5px;text-transform:uppercase;}
 .rule-item{font-size:12px;color:var(--blue);margin-bottom:5px;padding-left:1.2em;text-indent:-1.2em;line-height:1.5;}
-
-/* ── PASS ── */
 .pass-box{background:#fff;border:1px solid var(--border);border-radius:16px;padding:3rem 1.5rem;text-align:center;margin:0.5rem 0;}
 .pass-nm{font-size:22px;font-weight:700;margin-bottom:6px;color:var(--blue);}
 .pass-sub{font-size:13px;color:var(--text2);margin-bottom:2rem;line-height:1.7;}
 .pass-btn{padding:13px 36px;background:var(--blue);color:#fff;border:none;border-radius:14px;font-size:15px;font-weight:600;cursor:pointer;}
 .pass-btn:hover{background:var(--blue2);}
-
-/* ── GAME (メイン画面) ── */
 .g-header{display:flex;justify-content:space-between;align-items:flex-end;padding:0.5rem 0 0.6rem;}
 .g-turn-lbl{font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:0.5px;}
 .g-turnnum{font-size:22px;font-weight:700;color:var(--blue);}
 .round-badge{font-size:11px;font-weight:600;background:var(--gold3);color:var(--gold);border:1px solid var(--gold2);border-radius:6px;padding:3px 8px;}
 .prog{height:5px;background:var(--ivory2);border-radius:3px;margin-bottom:0.75rem;overflow:hidden;}
 .prog-fill{height:100%;background:var(--blue);border-radius:3px;transition:width .4s;}
-
-/* ── 人物カード表示 (リッチ版) ── */
 .mkt-row{display:flex;gap:14px;justify-content:center;padding:10px 0;}
 .person-card{
   background:#fff;border:2px solid var(--border);border-radius:10px;
@@ -163,8 +144,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
 .card-pt.pos{background:var(--blue4);color:var(--blue);}
 .card-pt.neg{background:var(--red4);color:var(--red);}
 .card-pt.zero{background:var(--ivory2);color:var(--text2);}
-
-/* 政令カード */
 .decree-card{
   background:#fff;border:2px solid var(--red2);border-radius:10px;
   width:90px;height:125px;box-shadow:0 3px 8px rgba(0,0,0,0.1);
@@ -175,8 +154,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
 .decree-icon{font-size:28px;margin-bottom:4px;}
 .decree-name{font-size:10px;font-weight:700;color:var(--red);text-align:center;line-height:1.2;}
 .decree-name-fr{font-size:9px;color:var(--red2);text-align:center;margin-top:2px;}
-
-/* 裏向きカード */
 .card-back-rich{
   background:repeating-linear-gradient(45deg,#1B3F6E,#1B3F6E 10px,#2A5FA8 10px,#2A5FA8 20px);
   width:90px;height:125px;border-radius:10px;border:2px solid var(--blue);
@@ -184,15 +161,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
   box-shadow:0 3px 8px rgba(0,0,0,0.15);
 }
 .card-back-emblem{font-size:28px;opacity:0.6;}
-
-/* 3Dフリップ */
 .flip-container{perspective:1000px;width:90px;height:125px;flex-shrink:0;}
 .flipper{width:100%;height:100%;transition:transform 0.6s cubic-bezier(0.4,0.2,0.2,1);transform-style:preserve-3d;position:relative;}
 .flipped .flipper{transform:rotateY(180deg);}
 .card-face,.card-back-face{backface-visibility:hidden;position:absolute;top:0;left:0;width:100%;height:100%;border-radius:10px;}
 .card-face{transform:rotateY(180deg);}
-
-/* ── 派閥エリア ── */
 .factions{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:7px;margin-bottom:0.65rem;}
 .faction{background:#fff;border:1px solid var(--border);border-radius:14px;padding:0.75rem;}
 .faction-hd{display:flex;align-items:center;gap:6px;margin-bottom:5px;}
@@ -206,15 +179,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
 .empty-lbl{font-size:11px;color:var(--text2);font-style:italic;}
 .bid-start-btn{width:100%;padding:11px;background:var(--blue);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:0.3px;}
 .bid-start-btn:hover{background:var(--blue2);}
-
-/* ── 影響力トークン表示 ── */
 .token-row{display:flex;gap:5px;margin-top:4px;flex-wrap:wrap;}
 .inf-token{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font-size:10px;font-weight:700;border:1.5px solid;}
 .inf-token.pos2{background:var(--gold3);color:var(--gold);border-color:var(--gold2);}
 .inf-token.pos1{background:var(--blue4);color:var(--blue);border-color:var(--blue2);}
 .inf-token.neg1{background:var(--red4);color:var(--red);border-color:var(--red2);}
-
-/* ── BID ── */
 .bid-box{background:var(--gold4);border:1px solid var(--gold3);border-radius:14px;padding:1rem;margin-bottom:0.65rem;}
 .bid-who{font-size:15px;font-weight:700;margin-bottom:3px;color:var(--gold);}
 .bid-sub{font-size:13px;color:var(--gold);margin-bottom:0.75rem;opacity:0.8;}
@@ -227,8 +196,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
 .blind-lbl{font-size:10px;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;}
 .blind-cards{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-start;}
 .hand-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:0.75rem;}
-
-/* 手札カード */
 .hcard{
   width:48px;
   height:64px;
@@ -255,8 +222,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
 .hcard.sel{background:var(--blue);color:#fff;border-color:var(--blue);transform:translateY(-3px);box-shadow:0 4px 10px rgba(27,63,110,0.25);}
 .conf-btn{padding:9px 22px;background:var(--blue);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;}
 .conf-btn:disabled{opacity:.35;cursor:not-allowed;}
-
-/* ── REVEAL ── */
 .bids-list{display:flex;flex-direction:column;gap:7px;margin-top:0.5rem;}
 .bid-res{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;background:var(--ivory);border:1px solid var(--border);font-size:13px;}
 .bid-res.win{background:var(--gold4);border:1.5px solid var(--gold3);}
@@ -265,8 +230,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
 .tie-tag{font-size:11px;color:var(--text2);font-weight:600;margin-left:auto;}
 .nxt-btn{width:100%;padding:11px;background:var(--blue);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;margin-top:0.75rem;}
 .nxt-btn:hover{background:var(--blue2);}
-
-/* ── 政令カードモーダル ── */
 .sp-modal-bg{background:rgba(26,26,26,0.5);border-radius:16px;padding:1.5rem 1rem;display:flex;align-items:center;justify-content:center;min-height:260px;margin-bottom:0.65rem;}
 .sp-modal{background:#fff;border-radius:16px;padding:1.5rem;border:1px solid var(--border);max-width:380px;width:100%;}
 .sp-title{font-size:16px;font-weight:700;margin-bottom:5px;color:var(--red);}
@@ -276,8 +239,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
 .tgt-btn{padding:9px 13px;border:1px solid var(--border);border-radius:10px;background:var(--ivory);cursor:pointer;font-size:13px;text-align:left;color:var(--text);}
 .tgt-btn:hover{background:var(--blue4);border-color:var(--blue2);}
 .skip-btn{margin-top:9px;width:100%;padding:8px;background:transparent;border:1px solid var(--border);border-radius:10px;color:var(--text2);cursor:pointer;font-size:13px;}
-
-/* ── カットイン ── */
 #cut-in{position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(26,26,26,0.88);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s;}
 #cut-in.show{opacity:1;pointer-events:auto;}
 .cut-in-inner{text-align:center;}
@@ -285,14 +246,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
 .cut-in-text{font-size:2rem;color:#FFD700;font-weight:800;text-shadow:0 0 20px rgba(255,215,0,0.8),0 0 10px #000;transform:scale(0.5) translateX(-100px) skewX(-12deg);transition:transform 0.4s cubic-bezier(0.175,0.885,0.32,1.275);}
 #cut-in.show .cut-in-text{transform:scale(1) translateX(0) skewX(-12deg);}
 .cut-in-sub{font-size:13px;color:rgba(255,255,255,0.6);margin-top:0.5rem;letter-spacing:1px;}
-
-/* ── ラウンド終了 ── */
 .round-end-box{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.5rem;margin-bottom:0.65rem;}
 .round-title{font-size:20px;font-weight:700;color:var(--blue);margin-bottom:1rem;text-align:center;}
 .round-res-row{display:flex;align-items:center;gap:10px;padding:0.7rem 0.8rem;background:var(--ivory);border-radius:10px;margin-bottom:6px;}
 .round-tokens{display:flex;gap:4px;margin-left:auto;}
-
-/* ★ 派手な演出用の追加CSS ★ */
+/* ラウンド/最終結果の伏せカード公開バッジ */
+.ptag.was-blind{
+  background:var(--gold4);
+  color:var(--gold);
+  border:1px solid var(--gold2);
+  font-style:normal;
+}
 .champion-banner {
   background: linear-gradient(135deg, #C49A28, #FBF3DC, #C49A28);
   color: var(--blue);
@@ -338,12 +302,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
   margin-top: 0.5rem;
   color: var(--text);
 }
-
 @keyframes popIn {
   0% { transform: scale(0.8) translateY(20px); opacity: 0; }
   100% { transform: scale(1) translateY(0); opacity: 1; }
 }
-
 .round-res-row.rank-1 {
   border: 2px solid var(--gold2);
   background: var(--gold4);
@@ -352,8 +314,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
   z-index: 10;
   position: relative;
 }
-
-/* 紙吹雪用 */
 #confetti-container {
   position: fixed;
   top: 0;
@@ -374,8 +334,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
   0% { transform: translateY(-10vh) rotate(0deg) scale(1); opacity: 1; }
   100% { transform: translateY(100vh) rotate(720deg) scale(0.5); opacity: 0; }
 }
-
-/* ── 最終結果 ── */
 .res-wrap{padding:0.5rem 0;}
 .res-title{text-align:center;font-size:24px;font-weight:700;color:var(--blue);margin-bottom:0.25rem;}
 .res-sub{text-align:center;font-size:12px;color:var(--text2);margin-bottom:1rem;letter-spacing:0.5px;}
@@ -388,13 +346,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
 .res-cards{display:flex;flex-wrap:wrap;gap:3px;margin-top:5px;}
 .restart-btn{width:100%;padding:13px;background:var(--blue);color:#fff;border:none;border-radius:14px;font-size:16px;font-weight:600;cursor:pointer;}
 .restart-btn:hover{background:var(--blue2);}
-
-/* ── 手数字マーク ── */
 .mark-badge{font-size:16px;}
 </style>
 </head>
 <body>
-
 <div id="cut-in">
   <div class="cut-in-inner">
     <span class="cut-in-icon" id="cut-in-icon"></span>
@@ -402,28 +357,23 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
     <div class="cut-in-sub" id="cut-in-sub"></div>
   </div>
 </div>
-
 <div class="app-wrapper">
-  
-  <!-- ────────────────── 左パネル：ルール ────────────────── -->
+  <!-- 左パネル：ルール -->
   <aside class="side-panel left-panel">
     <div class="panel-inner">
       <h2 class="panel-title">📖 ゲームルール</h2>
-      
       <div class="rule-section">
         <div class="rule-h">勝利条件</div>
         <p>全3ラウンド終了時に、影響力トークンが最も多いプレイヤーの勝利。</p>
       </div>
-
       <div class="rule-section">
         <div class="rule-h">1日の流れ (各ラウンド全10日)</div>
         <ol class="rule-list">
           <li>山札からカードが2枚公開される。</li>
           <li>全員が手札(数字カード)を1枚ずつ提示。</li>
-          <li>最高値を出した人が2枚獲得(同値は先に出した人優先)。負けた場合はパスか出し直し。</li>
+          <li>最高値を出した人が2枚獲得(同値は先に出した人優先)。</li>
         </ol>
       </div>
-
       <div class="rule-section">
         <div class="rule-h">政令カード (即時発動)</div>
         <ul class="rule-list">
@@ -432,7 +382,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
           <li><strong>🚢 追放:</strong> 自分の派閥のカード1枚を任意の誰かに送る</li>
         </ul>
       </div>
-
       <div class="rule-section">
         <div class="rule-h">ラウンド終了と得点</div>
         <p>獲得した人物カード(同名)の枚数で政治力を計算。</p>
@@ -441,15 +390,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
           <li>2位: 影響力 +1 (※3人プレイ以上)</li>
           <li>最下位: 影響力 -1</li>
         </ul>
-        <p class="rule-note">※同点時は派閥のカード枚数が多い方が勝利。</p>
+        <p class="rule-note">※伏せカードはラウンド終了時・最終結果時に公開されます</p>
         <p class="rule-note">※手札と派閥をリセットし、伏せカードを引き直して次ラウンドへ</p>
       </div>
     </div>
   </aside>
-
-  <!-- ────────────────── メインコンテナ ────────────────── -->
+  <!-- メインコンテナ -->
   <div class="container">
-
     <!-- SETUP -->
     <div id="ss" class="screen active">
       <div class="setup-hero">
@@ -458,7 +405,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
         <div class="game-title">革命ゲーム</div>
         <div class="game-sub" style="margin-top:3px;margin-bottom:0;">the French Revolution</div>
       </div>
-
       <div class="rule-box">
         <h3>📖 ゲームの概要</h3>
         <div class="rule-item">・全3ラウンド×10日間制。最終的に影響力トークンが最多のプレイヤーの勝利。</div>
@@ -466,7 +412,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
         <div class="rule-item">・同名カードの枚数で政治力が変わるため、計画的な派閥作りが鍵です。</div>
         <div class="rule-item">・※PCなどでご覧の場合は、左右のパネルに詳細ルールと早見表が表示されます。</div>
       </div>
-
       <div class="s-card">
         <div class="s-label">プレイヤー人数</div>
         <div class="cnt-row" id="cnt-grid"></div>
@@ -477,7 +422,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
       </div>
       <button class="go-btn" onclick="startGame()">⚜️ 革命を起こす</button>
     </div>
-
     <!-- PASS -->
     <div id="sp" class="screen">
       <div class="pass-box">
@@ -486,7 +430,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
         <button class="pass-btn" onclick="showBidScreen()">⚔️ 準備OK</button>
       </div>
     </div>
-
     <!-- GAME MAIN -->
     <div id="sg" class="screen">
       <div class="g-header">
@@ -504,7 +447,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
       <div class="factions" id="factions-main"></div>
       <button class="bid-start-btn" onclick="startBidding()">競りを開始する ⚖️</button>
     </div>
-
     <!-- BID -->
     <div id="sb" class="screen">
       <div class="g-header">
@@ -524,7 +466,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
         <button class="conf-btn" id="conf-btn" onclick="confirmBid()" disabled>この札で勝負</button>
       </div>
     </div>
-
     <!-- REVEAL -->
     <div id="sr" class="screen">
       <div class="sec"><div class="sec-lbl">今日の議題</div><div class="mkt-row" id="mkt-rev"></div></div>
@@ -535,13 +476,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
         <button class="nxt-btn" onclick="resolveWinner()">結果を確定する →</button>
       </div>
     </div>
-
     <!-- SPECIAL (政令カード) -->
     <div id="ssp" class="screen">
       <div class="sec"><div class="sec-lbl">政令発動</div><div class="mkt-row" id="mkt-sp"></div></div>
       <div id="sp-area"></div>
     </div>
-
     <!-- ROUND END -->
     <div id="sround" class="screen">
       <div class="round-end-box">
@@ -550,7 +489,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
       </div>
       <button class="nxt-btn" id="round-nxt-btn" onclick="afterRoundEnd()">次のラウンドへ →</button>
     </div>
-
     <!-- FINAL RESULT -->
     <div id="sres" class="screen">
       <div class="res-wrap">
@@ -560,14 +498,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
         <button class="restart-btn" onclick="restartGame()">⚜️ もう一度遊ぶ</button>
       </div>
     </div>
-
   </div><!-- /container -->
-
-  <!-- ────────────────── 右パネル：早見表 ────────────────── -->
+  <!-- 右パネル：早見表 -->
   <aside class="side-panel right-panel">
     <div class="panel-inner">
       <h2 class="panel-title">📊 早見表</h2>
-      
       <div class="ref-section">
         <div class="ref-h">人物カードの政治力 (各5枚)</div>
         <table class="ref-table">
@@ -579,7 +514,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
           <tr><td><span class="ref-icon">🌹</span>王族</td><td class="pos">+5</td><td class="pos">+2</td><td class="neg">-15</td></tr>
         </table>
       </div>
-
       <div class="ref-section">
         <div class="ref-h">政令カードの効果 (各2枚)</div>
         <table class="ref-table" style="margin-top: 8px;">
@@ -591,25 +525,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sa
           <tr><td style="text-align:left; font-weight:normal;">誰かの派閥に人物カードを1枚渡す</td></tr>
         </table>
       </div>
-
     </div>
   </aside>
-
 </div><!-- /app-wrapper -->
-
 <script>
-/* =====================================================
-   DATA
-===================================================== */
 const CLR=[
   ['#1B3F6E','#D6E4F5'],['#6B1414','#F5DDD8'],
   ['#0F5E40','#D5EFE5'],['#5C3A00','#F5E8C0'],
   ['#4B2880','#EDE8FB']
 ];
 const MARKS=['♠','♥','♦','♣','☽'];
-
-// 人物カード 5種×5枚
-// pts: [1枚時, 2枚時, 3枚以上時]
 const PERSONS=[
   {id:'sanculotte', nameJP:'サン・キュロット', nameFR:'Les Sans-culottes', icon:'👒', pts:[0,0,15],  cnt:5, stripe:'#C49A28'},
   {id:'bourgeois',  nameJP:'ブルジョワジー',   nameFR:'La Bourgeoisie',  icon:'📜', pts:[3,4,6],   cnt:5, stripe:'#2A5FA8'},
@@ -617,19 +542,15 @@ const PERSONS=[
   {id:'noblesse',   nameJP:'貴族',             nameFR:'La Noblesse',     icon:'👑', pts:[-3,6,-3], cnt:5, stripe:'#C49A28'},
   {id:'monarchie',  nameJP:'王族',             nameFR:'La Monarchie',    icon:'🌹', pts:[5,2,-15], cnt:5, stripe:'#C0392B'},
 ];
-// 政令カード 3種×2枚
 const DECREES=[
   {id:'guillotine', nameJP:'ギロチン',    nameFR:'La Guillotine',  icon:'⚔️',  cnt:2},
   {id:'allegeance', nameJP:'忠誠',        nameFR:"L'Allégeance",   icon:'🤝',  cnt:2},
   {id:'exil',       nameJP:'追放',        nameFR:"L'Exil",         icon:'🚢',  cnt:2},
 ];
-
 function personMeta(id){return PERSONS.find(p=>p.id===id);}
 function decMeta(id){return DECREES.find(d=>d.id===id);}
 function anyMeta(id){return personMeta(id)||decMeta(id);}
-
 function calcPolitical(faction){
-  // 人物カードのみカウント（政令カードは派閥に残らない）
   const cnt={};PERSONS.forEach(p=>cnt[p.id]=0);
   faction.forEach(c=>{if(cnt.hasOwnProperty(c.typeId))cnt[c.typeId]++;});
   let tot=0;
@@ -639,9 +560,7 @@ function calcPolitical(faction){
   });
   return tot;
 }
-
 function shuffle(d){for(let i=d.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[d[i],d[j]]=[d[j],d[i]];}}
-
 function makeDeck(){
   const d=[];
   PERSONS.forEach(p=>{for(let i=0;i<p.cnt;i++)d.push({typeId:p.id,id:p.id+'_'+i,isDecree:false,blind:false});});
@@ -649,20 +568,16 @@ function makeDeck(){
   shuffle(d);return d;
 }
 
-/* =====================================================
-   RENDER HELPERS
-===================================================== */
+/* ── レンダー ── */
 function ptClass(v){return v>0?'pos':v<0?'neg':'zero';}
-
-function personCardHTML(c, small=false){
+function personCardHTML(c){
   const m=personMeta(c.typeId);
   const pts=m.pts;
-  const sz=small?'transform:scale(0.72);transform-origin:top left;':'';
-  return `<div class="person-card" style="${sz}">
+  return `<div class="person-card">
     <div class="card-faction-stripe" style="background:${m.stripe}"></div>
     <div class="card-icon">${m.icon}</div>
     <div class="card-name-jp">${m.nameJP}</div>
-    <div class="card-name-fr" style="font-size:${small?'8':'9'}px">${m.nameFR}</div>
+    <div class="card-name-fr">${m.nameFR}</div>
     <div class="card-pts-row">
       <span class="card-pt ${ptClass(pts[0])}">${pts[0]>0?'+':''}${pts[0]}</span>
       <span class="card-pt ${ptClass(pts[1])}">${pts[1]>0?'+':''}${pts[1]}</span>
@@ -670,7 +585,6 @@ function personCardHTML(c, small=false){
     </div>
   </div>`;
 }
-
 function decreeCardHTML(c){
   const m=decMeta(c.typeId);
   return `<div class="decree-card">
@@ -679,11 +593,9 @@ function decreeCardHTML(c){
     <div class="decree-name-fr">${m.nameFR}</div>
   </div>`;
 }
-
 function backCardHTML(){
   return `<div class="card-back-rich"><div class="card-back-emblem">⚜️</div></div>`;
 }
-
 function renderMkt(cards, cid, animateFlip=false){
   const el=document.getElementById(cid);if(!el)return;el.innerHTML='';
   cards.forEach((c,i)=>{
@@ -697,6 +609,7 @@ function renderMkt(cards, cid, animateFlip=false){
   });
 }
 
+/* ── ゲーム中の派閥表示（伏せカードは「？伏せ」表示） ── */
 function renderFactions(){
   const el=document.getElementById('factions-main');if(!el)return;el.innerHTML='';
   G.players.forEach((p,i)=>{
@@ -724,13 +637,22 @@ function renderFactions(){
   });
 }
 
-/* =====================================================
-   GAME STATE & ANIMATION
-===================================================== */
+/* ── 結果画面用：伏せカードも含めて全公開でカードタグを生成 ── */
+function renderCardsRevealed(field){
+  if(!field.length) return '<span class="empty-lbl">カードなし</span>';
+  return field.map(c=>{
+    if(c.isDecree) return ''; // 政令カードは派閥に残らない
+    const m=personMeta(c.typeId);
+    if(!m) return '';
+    // 元々伏せカードだったものはゴールドバッジで強調
+    const cls = c.blind ? 'ptag was-blind' : 'ptag';
+    const label = c.blind ? `🔓${m.icon}${m.nameJP}` : `${m.icon}${m.nameJP}`;
+    return `<span class="${cls}" title="${c.blind?'伏せカードを公開':''}"">${label}</span>`;
+  }).join('');
+}
+
 let G={};
-
 function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');}
-
 function showCutIn(icon,msg,sub,callback){
   document.getElementById('cut-in-icon').textContent=icon;
   document.getElementById('cut-in-msg').textContent=msg+' 発動！';
@@ -739,17 +661,13 @@ function showCutIn(icon,msg,sub,callback){
   bg.classList.add('show');
   setTimeout(()=>{bg.classList.remove('show');if(callback)setTimeout(callback,300);},1800);
 }
-
-// 🎊 紙吹雪エフェクト関数 🎊
 function fireConfetti() {
   const container = document.getElementById('confetti-container') || document.createElement('div');
   container.id = 'confetti-container';
   container.innerHTML = '';
   document.body.appendChild(container);
-
-  const colors = ['#E03A3A', '#2A5FA8', '#F5E8C0', '#ffffff', '#8B6914']; // トリコロール＋ゴールド
-  const shapes = ['50%', '0%']; // 円形と四角形
-
+  const colors = ['#E03A3A', '#2A5FA8', '#F5E8C0', '#ffffff', '#8B6914'];
+  const shapes = ['50%', '0%'];
   for (let i = 0; i < 80; i++) {
     const c = document.createElement('div');
     c.className = 'confetti';
@@ -758,22 +676,15 @@ function fireConfetti() {
     c.style.borderRadius = shapes[Math.floor(Math.random() * shapes.length)];
     c.style.animation = `confetti-fall ${Math.random() * 2 + 2}s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`;
     c.style.animationDelay = Math.random() * 0.5 + 's';
-    
     const size = Math.random() * 10 + 5;
     c.style.width = size + 'px';
     c.style.height = (size * (Math.random() + 1)) + 'px';
-
     container.appendChild(c);
   }
-  
-  setTimeout(() => {
-    if (container.parentNode) container.parentNode.removeChild(container);
-  }, 4000);
+  setTimeout(() => { if (container.parentNode) container.parentNode.removeChild(container); }, 4000);
 }
 
-/* =====================================================
-   SETUP
-===================================================== */
+/* ── セットアップ ── */
 function buildCntGrid(){
   const el=document.getElementById('cnt-grid');el.innerHTML='';
   [2,3,4,5].forEach(n=>{
@@ -797,7 +708,6 @@ function buildNames(n){
     el.appendChild(row);
   }
 }
-
 function startGame(){
   const n=G.cnt||2;
   G.players=[];
@@ -805,7 +715,6 @@ function startGame(){
     const v=document.getElementById('pn-'+i);
     G.players.push({name:v?v.value||`P${i+1}`:`P${i+1}`,field:[],hand:[1,2,3,4,5,6,7,8,9,10],used:[],ci:i,influence:[]});
   }
-  // 初期派閥（2枚ずつ、裏向き）
   const initDeck=makeDeck();
   G.players.forEach(p=>{
     for(let i=0;i<2;i++){
@@ -820,14 +729,12 @@ function startGame(){
   G.deck=makeDeck();
   show('sg');renderMainScreen();
 }
-
 function renderMainScreen(){
   const dayInRound=G.turn;
   document.getElementById('g-turn').textContent=`第${G.round}ラウンド ${dayInRound}日目 / 10`;
   document.getElementById('prog-fill').style.width=(dayInRound/G.maxTurn*100)+'%';
   document.getElementById('round-badge').textContent=`第${G.round}ラウンド`;
   document.getElementById('g-first').textContent=G.players[G.first].name;
-  
   G.mkt=[];
   for(let i=0;i<2;i++){if(G.deck.length)G.mkt.push(G.deck.pop());}
   renderMkt(G.mkt,'mkt-main',true);
@@ -835,11 +742,8 @@ function renderMainScreen(){
   show('sg');
 }
 
-/* =====================================================
-   BIDDING
-===================================================== */
+/* ── 入札 ── */
 let selBid=null;
-
 function startBidding(){
   G.order=[];
   for(let i=0;i<G.players.length;i++)G.order.push((G.first+i)%G.players.length);
@@ -856,7 +760,6 @@ function showBidScreen(){
   document.getElementById('b-turn').textContent=`第${G.round}ラウンド ${G.turn}日目`;
   document.getElementById('b-round-badge').textContent=`第${G.round}ラウンド`;
   document.getElementById('bid-who').textContent=p.name+' — 数字カードを1枚選択';
-
   const prevArea=document.getElementById('previous-bids-area');
   if(G.visibleBids&&G.visibleBids.length){
     prevArea.innerHTML=`<div class="prev-bids-box">
@@ -864,9 +767,7 @@ function showBidScreen(){
       ${G.visibleBids.map(b=>`<div class="prev-bid-row"><span>${b.name}</span><span class="prev-bid-num">${b.bid}</span></div>`).join('')}
     </div>`;
   }else{prevArea.innerHTML='';}
-
   renderMkt(G.mkt,'mkt-bid');
-
   const bra=document.getElementById('blind-reveal-area');
   if(p.field.length>0){
     bra.style.display='block';
@@ -879,7 +780,6 @@ function showBidScreen(){
       </div>`;
     }).join('');
   }else{bra.style.display='none';}
-
   const hand=document.getElementById('hand-display');
   hand.innerHTML='';selBid=null;document.getElementById('conf-btn').disabled=true;
   p.hand.forEach(v=>{
@@ -895,7 +795,6 @@ function showBidScreen(){
   });
   show('sb');
 }
-
 function confirmBid(){
   if(selBid===null)return;
   const pidx=G.order[G.bidIdx];
@@ -907,19 +806,15 @@ function confirmBid(){
   if(G.bidIdx<G.order.length){showPassScreen();}else{showReveal();}
 }
 
-/* =====================================================
-   REVEAL
-===================================================== */
+/* ── 公開 ── */
 function showReveal(){
   renderMkt(G.mkt,'mkt-rev');
   const el=document.getElementById('bids-rev');el.innerHTML='';
-
   let maxB=-1;
   G.bidOrder.forEach(pidx=>{if(G.bids[pidx]>maxB)maxB=G.bids[pidx];});
   const tied=G.bidOrder.filter(pidx=>G.bids[pidx]===maxB);
   const winner=tied[0];
   G.revWin=winner;
-
   G.order.forEach(pidx=>{
     const p=G.players[pidx];const isW=pidx===winner;const isTie=tied.length>1&&tied.includes(pidx);
     const d=document.createElement('div');d.className='bid-res'+(isW?' win':'');
@@ -929,13 +824,11 @@ function showReveal(){
       ${isW?'<span class="win-tag">🏅 勝者</span>':(isTie?'<span class="tie-tag">同値・後手</span>':'')}`;
     el.appendChild(d);
   });
-
   let desc=`${G.players[winner].name}が「${maxB}」を出して勝利！`;
   if(tied.length>1)desc+=`（同値が出ましたが、先に提示した${G.players[winner].name}が優先）`;
   document.getElementById('rev-desc').textContent=desc;
   show('sr');
 }
-
 function resolveWinner(){
   const w=G.revWin;
   const normals=G.mkt.filter(c=>!c.isDecree);
@@ -947,9 +840,7 @@ function resolveWinner(){
   }else{afterDayResolve();}
 }
 
-/* =====================================================
-   DECREE CARDS
-===================================================== */
+/* ── 政令カード ── */
 function nextDecree(){
   if(G.decIdx>=G.pendDecrees.length){afterDayResolve();return;}
   const card=G.pendDecrees[G.decIdx];
@@ -961,17 +852,13 @@ function nextDecree(){
   }
   renderDecreeModal(card);
 }
-
 function renderDecreeModal(card){
   const w=G.decWin;
   renderMkt(G.mkt,'mkt-sp');
   const area=document.getElementById('sp-area');
-
   if(card.typeId==='guillotine'){
     const tgts=[];
-    G.players.forEach((p,pi)=>{
-      p.field.forEach(c=>{tgts.push({pi,card:c});});
-    });
+    G.players.forEach((p,pi)=>{ p.field.forEach(c=>{tgts.push({pi,card:c});}); });
     if(!tgts.length){G.decIdx++;nextDecree();return;}
     const m=decMeta('guillotine');
     let h=`<div class="sp-modal-bg"><div class="sp-modal">
@@ -986,7 +873,6 @@ function renderDecreeModal(card){
     });
     h+=`</div><button class="skip-btn" onclick="skipDecree()">スキップ</button></div></div>`;
     area.innerHTML=h;show('ssp');
-
   }else if(card.typeId==='allegeance'){
     const tgts=[];
     G.players.forEach((p,pi)=>{if(pi!==w)p.field.forEach(c=>tgts.push({pi,card:c}));});
@@ -1004,7 +890,6 @@ function renderDecreeModal(card){
     });
     h+=`</div><button class="skip-btn" onclick="skipDecree()">スキップ</button></div></div>`;
     area.innerHTML=h;show('ssp');
-
   }else if(card.typeId==='exil'){
     const own=G.players[w].field;
     if(!own.length||G.players.length<2){G.decIdx++;nextDecree();return;}
@@ -1023,11 +908,10 @@ function renderDecreeModal(card){
     area.innerHTML=h;show('ssp');
   }
 }
-
 function doGuillotine(fromPi,cardId){
   const f=G.players[fromPi].field;
   const ci=f.findIndex(c=>c.id===cardId);
-  if(ci!==-1)f.splice(ci,1); 
+  if(ci!==-1)f.splice(ci,1);
   G.decIdx++;nextDecree();
 }
 function doAllegeance(fromPi,cardId){
@@ -1059,25 +943,17 @@ function doExil(toPi){
 }
 function skipDecree(){G.decIdx++;nextDecree();}
 
-/* =====================================================
-   ROUND END & RESOLUTION (演出強化版)
-===================================================== */
+/* ── ラウンド終了 ── */
 function afterDayResolve(){
   if(G.turn>=G.maxTurn){showRoundEnd();}
   else{G.turn++;renderMainScreen();}
 }
-
 function showRoundEnd(){
-  // 政治力計算
   const results=G.players.map((p,i)=>({p,i,pol:calcPolitical(p.field)}));
-  
-  // ★追加：同点の場合、派閥のカード枚数が多いプレイヤーが勝利となるロジック
   results.sort((a,b)=>{
     if(b.pol !== a.pol) return b.pol - a.pol;
-    return b.p.field.length - a.p.field.length; // 政治力が同じならカード枚数で判定
+    return b.p.field.length - a.p.field.length;
   });
-
-  // 影響力トークン付与
   const n=G.players.length;
   results.forEach((r,rank)=>{
     let tok=0;
@@ -1086,38 +962,23 @@ function showRoundEnd(){
     if(rank===n-1)tok=-1;
     if(tok!==0)G.players[r.i].influence.push(tok);
   });
-  // 最下位が次ラウンドの先手
   G.first=results[results.length-1].i;
-
-  const title=document.getElementById('round-end-title');
-  title.textContent=`第${G.round}ラウンド終了`;
-
-  const body=document.getElementById('round-end-body');
+  document.getElementById('round-end-title').textContent=`第${G.round}ラウンド終了`;
   const medals=['🥇','🥈','🥉','4位','5位'];
-  
-  const winner = results[0];
-
-  // ★追加：勝者を強調するチャンピオンバナー
-  let html = `
+  const winner=results[0];
+  let html=`
     <div class="champion-banner">
       <div class="champion-banner-title">👑 Round ${G.round} Winner 👑</div>
       <div class="champion-banner-name">${winner.p.name}</div>
       <div class="champion-banner-score">政治力: ${winner.pol} pts</div>
     </div>
   `;
-
-  html += results.map((r,rank)=>{
+  html+=results.map((r,rank)=>{
     const tok=rank===0?'+2':rank===1&&n>=3?'+1':rank===n-1?'-1':'0';
     const tokCls=tok.startsWith('-')?'neg1':tok==='+1'?'pos1':tok==='+2'?'pos2':'';
-    const cards=r.p.field.map(c=>{
-      if(c.isDecree)return'';
-      const m=personMeta(c.typeId);
-      return c.blind?`<span class="ptag blind">？伏せ</span>`:`<span class="ptag">${m.icon}${m.nameJP}</span>`;
-    }).join('');
-    
-    // ★追加：1位の行をハイライトさせるクラス
-    const rankCls = rank === 0 ? 'rank-1' : '';
-
+    const rankCls=rank===0?'rank-1':'';
+    /* ★ 伏せカードも含めて全公開 ★ */
+    const cards=renderCardsRevealed(r.p.field);
     return `<div class="round-res-row ${rankCls}">
       <span style="font-size:18px">${medals[rank]||rank+1}</span>
       <div style="flex:1">
@@ -1125,14 +986,10 @@ function showRoundEnd(){
         <div style="font-size:12px;color:var(--text2)">政治力 <strong>${r.pol}</strong></div>
         <div class="faction-cards" style="margin-top:3px;">${cards}</div>
       </div>
-      <div class="round-tokens">
-        <span class="inf-token ${tokCls}">${tok}</span>
-      </div>
+      <div class="round-tokens"><span class="inf-token ${tokCls}">${tok}</span></div>
     </div>`;
   }).join('');
-
-  body.innerHTML = html;
-
+  document.getElementById('round-end-body').innerHTML=html;
   const nxtBtn=document.getElementById('round-nxt-btn');
   if(G.round>=G.maxRound){
     nxtBtn.textContent='最終結果を見る 🏆';
@@ -1141,11 +998,9 @@ function showRoundEnd(){
     nxtBtn.textContent=`第${G.round+1}ラウンドへ →`;
     nxtBtn.onclick=afterRoundEnd;
   }
-  
   show('sround');
-  fireConfetti(); // 🎉 紙吹雪発射！
+  fireConfetti();
 }
-
 function afterRoundEnd(){
   G.round++;G.turn=1;
   G.players.forEach(p=>{
@@ -1167,9 +1022,7 @@ function afterRoundEnd(){
   renderMainScreen();
 }
 
-/* =====================================================
-   FINAL RESULT
-===================================================== */
+/* ── 最終結果 ── */
 function showFinalResult(){
   const totals=G.players.map((p,i)=>({
     p,i,
@@ -1178,9 +1031,8 @@ function showFinalResult(){
   }));
   totals.sort((a,b)=>{
     if(b.total!==a.total)return b.total-a.total;
-    return b.pos2-a.pos2; 
+    return b.pos2-a.pos2;
   });
-
   const el=document.getElementById('res-list');el.innerHTML='';
   const medals=['🥇','🥈','🥉','4位','5位'];
   totals.forEach((r,rank)=>{
@@ -1190,26 +1042,24 @@ function showFinalResult(){
       const cls=t===2?'pos2':t===1?'pos1':'neg1';
       return `<span class="inf-token ${cls}">${t>0?'+':''}${t}</span>`;
     }).join('');
+    /* ★ 伏せカードも含めて全公開 ★ */
+    const cards=renderCardsRevealed(r.p.field);
     d.innerHTML=`<div class="res-rank">${medals[rank]||rank+1}</div>
       <div style="flex:1">
         <div style="font-size:15px;font-weight:700">${r.p.name}</div>
         <div class="token-row" style="margin-top:4px;">${tokens||'なし'}</div>
+        <div class="faction-cards" style="margin-top:6px;">${cards}</div>
       </div>
-      <div style="text-align:right">
+      <div style="text-align:right;flex-shrink:0;">
         <div class="res-infl">${r.total}</div>
         <div class="res-infllbl">影響力</div>
       </div>`;
     el.appendChild(d);
   });
   show('sres');
-  fireConfetti(); // 🎉 最終結果でも紙吹雪を発射！
+  fireConfetti();
 }
-
 function restartGame(){G={};show('ss');buildCntGrid();buildNames(2);}
-
-/* =====================================================
-   INIT
-===================================================== */
 G.cnt=2;buildCntGrid();buildNames(2);
 </script>
 </body>
